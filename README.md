@@ -5,8 +5,7 @@ notes:
 
  pip install yt_dlp
 
- 2.
- to linux systems:
+ 2.to linux systems:
  sudo apt install ffmpeg
 
  to mac systems:
