@@ -1,24 +1,37 @@
-import yt_dlp
-#download_video function
-def download_with_ytdlp(url, resolution="720"):
-    ydl_opts = {
-        #settings
-        'format': f'bestvideo[height<={resolution}]+bestaudio/best/best',
-        #place that will be download
-        'outtmpl': 'downloads/%(title)s.%(ext)s',
-        #out put format
-        'merge_output_format': 'mp4'
-    };
-    #download the video and show the information on the terminal
-    ydl = yt_dlp.YoutubeDL(ydl_opts);
-    info = ydl.extract_info(url, download=True);
-    return ydl.prepare_filename(info);
+from Download import Download;
 
 
-video_url = input('type the video url : ');
-resolution = int(input('type the resoltuion : '));
+def main():
+    try:
+        #catch the quality of the video or music
+        quality = int(input('type the quality : '));
 
-try:
-    download_with_ytdlp(video_url, resolution);
-except ValueError:
-    print(ValueError);
+        #system that will add multiple urls or not 
+        urls = ();
+
+        Continue = True;
+
+        while Continue:
+
+            url = input('type the url: ');
+
+            cn = input('do you want to continue add urls? [y/n]: ').upper();
+
+            urls = urls + (url,);
+
+            if(cn == 'Y'):
+                Continue = True;
+            else:   
+                Continue = False;
+        
+        #catch the type
+        type = input('type the type [mp4, mp3, webp]: ');
+
+        print(Download(quality, urls, type));
+    
+    except TypeError:
+        print(TypeError);
+    return 0;
+
+if __name__ == "__main__":
+    main();
