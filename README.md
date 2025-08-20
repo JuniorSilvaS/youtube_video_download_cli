@@ -4,7 +4,7 @@ linux
   sudo apt update
   sudo apt install python3 python3-pip -y
   sudo apt install ffmpeg -y
-  sudo apt install python3-yt-dlp
+  sudo apt install yt-dlp
   python3 main.py or python main.py
 windows 
   install python on the oficial website
