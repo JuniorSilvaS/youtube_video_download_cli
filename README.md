@@ -6,6 +6,7 @@ linux
   sudo apt install ffmpeg -y
   sudo apt install yt-dlp
   python3 main.py or python main.py
+  sudo apt install python3-tk
 windows 
   install python on the oficial website
   pip install yt-dlp
